@@ -1,0 +1,35 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+  
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id Int @id @default(autoincrement())
+
+nome String
+
+email String @unique
+
+senha String?
+}
+
+model Musicas{
+
+ id Int @id @default(autoincrement())
+
+ titulo String
+ album  String
+ ano_lancamento String
+ link_musica  String
+ link_imagem  String
+ 
+
+
+}

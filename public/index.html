@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Musicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-mark"></div>
+    </div>
+    <div class="ambient-light" id="ambientLight" aria-hidden="true"></div>
+
+    <main class="app">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Sua biblioteca</p>
+                <h1>Michael Jackson</h1>
+            </div>
+            <button class="ghost-button" id="refreshButton" type="button">Atualizar</button>
+        </header>
+
+        <nav class="tabs" aria-label="Escolha uma area">
+            <button class="tab active" type="button" data-tab="biblioteca">Biblioteca</button>
+            <button class="tab" type="button" data-tab="cadastro">Cadastros</button>
+        </nav>
+
+        <section class="panel active" id="bibliotecaPanel">
+            <div class="list-head">
+                <h2>Musicas em destaque</h2>
+                <span id="musicasCount">0 itens</span>
+            </div>
+            <div class="list music-list" id="musicasList"></div>
+        </section>
+
+        <section class="panel" id="cadastroPanel">
+            <div class="admin-layout">
+                <div class="forms-column">
+                    <form class="form" id="musicaForm">
+                        <input type="hidden" id="musicaId">
+                        <div class="form-head">
+                            <h2 id="musicaFormTitle">Cadastrar musica</h2>
+                            <button class="ghost-button hidden" id="cancelMusicaEdit" type="button">Cancelar edicao</button>
+                        </div>
+                        <div class="grid music-grid">
+                            <label>
+                                Titulo
+                                <input id="musicaTitulo" type="text" placeholder="Titulo" required>
+                            </label>
+                            <label>
+                                Album
+                                <input id="musicaAlbum" type="text" placeholder="Album" required>
+                            </label>
+                            <label>
+                                Ano
+                                <input id="musicaAno" type="text" placeholder="2026" required>
+                            </label>
+                            <label>
+                                Link da musica
+                                <input id="musicaLink" type="url" placeholder="https://..." required>
+                            </label>
+                            <label>
+                                Link da imagem
+                                <input id="musicaImagem" type="url" placeholder="https://..." required>
+                            </label>
+                        </div>
+                        <button class="primary-button" type="submit">Salvar musica</button>
+                    </form>
+
+                    <form class="form" id="usuarioForm">
+                        <input type="hidden" id="usuarioId">
+                        <div class="form-head">
+                            <h2 id="usuarioFormTitle">Cadastrar usuario</h2>
+                            <button class="ghost-button hidden" id="cancelUsuarioEdit" type="button">Cancelar edicao</button>
+                        </div>
+                        <div class="grid">
+                            <label>
+                                Nome
+                                <input id="usuarioNome" type="text" placeholder="Nome do usuario" required>
+                            </label>
+                            <label>
+                                Email
+                                <input id="usuarioEmail" type="email" placeholder="email@exemplo.com" required>
+                            </label>
+                            <label>
+                                Senha
+                                <input id="usuarioSenha" type="password" placeholder="Senha">
+                            </label>
+                        </div>
+                        <button class="primary-button" type="submit">Salvar usuario</button>
+                    </form>
+                </div>
+
+                <aside class="users-panel">
+                    <div class="list-head">
+                        <h2>Usuarios</h2>
+                        <span id="usuariosCount">0 itens</span>
+                    </div>
+                    <div class="list" id="usuariosList"></div>
+                </aside>
+            </div>
+        </section>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
