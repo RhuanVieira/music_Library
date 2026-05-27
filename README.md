@@ -33,11 +33,3 @@ O projeto funciona como um CRUD completo de músicas, permitindo cadastrar, visu
 ✅ API REST  
 ✅ CRUD completo  
 
----
-
-## 🖼️ Preview
-
-Adicione aqui prints do sistema:
-
-```md
-![Preview](./assets/preview.png)
